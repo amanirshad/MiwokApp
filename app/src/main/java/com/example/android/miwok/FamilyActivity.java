@@ -11,7 +11,7 @@ public class FamilyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_family);
+        setContentView(R.layout.word_list);
 
         ArrayList<Word> familyArray = new ArrayList<Word>();
 
@@ -28,7 +28,7 @@ public class FamilyActivity extends AppCompatActivity {
 
         WordAdapter wordAdapter = new WordAdapter(this,familyArray,R.color.category_family);
 
-        ListView listView = (ListView) findViewById(R.id.familylist);
+        ListView listView = (ListView) findViewById(R.id.list);
 
         listView.setAdapter(wordAdapter);
     }
