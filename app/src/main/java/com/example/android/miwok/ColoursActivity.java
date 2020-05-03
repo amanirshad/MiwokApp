@@ -10,6 +10,12 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class ColoursActivity extends AppCompatActivity {
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
     MediaPlayer mMediaPlayer;
     private MediaPlayer.OnCompletionListener mCompletionListener = new MediaPlayer.OnCompletionListener() {
         @Override
