@@ -1,13 +1,15 @@
 package com.example.android.miwok;
 
-import android.content.Context;
-
 /**
  * {@link Word} represents a word having english and miwok translation
  *
  */
 
 public class Word {
+
+
+    /*Raw Resource Id*/
+    private int mAudioResourceId;
 
     /* Drawable Resource Id*/
     private int mImageResourceId;
@@ -23,11 +25,13 @@ public class Word {
      *
      * @param defaultTranslation Default Translation for the word
      * @param miwokTranslation Mivok Translation for the word
+     * @param audioResourceId Audio Resource ID for the word
      */
-    public Word(String defaultTranslation , String miwokTranslation){
+    public Word(String defaultTranslation, String miwokTranslation, int audioResourceId) {
 
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -35,12 +39,14 @@ public class Word {
      * @param defaultTranslation Default Translation for the word
      * @param miwokTranslation Mivok Translation fot the word
      * @param imageResourceId Image Resource ID for the word
+     * @param audioResourceId Audio Resource ID for the word
      */
-    public Word(String defaultTranslation , String miwokTranslation , int imageResourceId){
+    public Word(String defaultTranslation, String miwokTranslation, int imageResourceId, int audioResourceId) {
 
         mImageResourceId = imageResourceId;
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+        mAudioResourceId = audioResourceId;
     }
 
     /**
@@ -58,7 +64,18 @@ public class Word {
         return mMiwokTranslation;
     }
 
+    /**
+     * @return Image Resource ID of the word
+     */
     public int getImageResourceId(){
         return mImageResourceId;
+    }
+
+    /**
+     *
+     * @return Audio Resource ID of the word
+     */
+    public int getAudioResourceId() {
+        return mAudioResourceId;
     }
 }
