@@ -15,12 +15,10 @@
  */
 package com.example.android.miwok;
 
-import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
-import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -31,41 +29,13 @@ public class MainActivity extends AppCompatActivity {
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
 
-        TextView numbersTextView = (TextView) findViewById(R.id.numbers);
-        numbersTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent numberIntent = new Intent(MainActivity.this , NumbersActivity.class);
-                startActivity(numberIntent);
-            }
-        });
+        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
+        SimpleFragmentPagerAdapter adapter = new SimpleFragmentPagerAdapter(getSupportFragmentManager());
 
-        TextView familyTextView = (TextView) findViewById(R.id.family);
-        familyTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent familyIntent = new Intent(MainActivity.this , FamilyActivity.class);
-                startActivity(familyIntent);
-            }
-        });
+        viewPager.setAdapter(adapter);
 
-        TextView coloursTextView = (TextView) findViewById(R.id.colours);
-        coloursTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent coloursIntent = new Intent(MainActivity.this , ColoursActivity.class);
-                startActivity(coloursIntent);
-            }
-        });
-
-        TextView phrasesTextView = (TextView) findViewById(R.id.phrases);
-        phrasesTextView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent phrasesIntent = new Intent(MainActivity.this , PhrasesActivity.class);
-                startActivity(phrasesIntent);
-            }
-        });
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
 
