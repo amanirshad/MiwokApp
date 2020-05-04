@@ -12,6 +12,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class NumbersActivity extends AppCompatActivity {
+
     MediaPlayer mMediaPlayer;
     AudioManager audioManager;
     AudioManager.OnAudioFocusChangeListener mOnAudioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
@@ -48,6 +49,8 @@ public class NumbersActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.word_list);
 
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         final ArrayList<Word> numbersArray = new ArrayList<Word>();
 
