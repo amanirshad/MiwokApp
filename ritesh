@@ -1,0 +1,5 @@
+Intent intent=new Intent(this,index.class);
+startActivity(intent);
+Toast.makeText(context,"hii",Toast.LENGTH_SHORT).show();
+list={"apple","mango"]
+list.split()
